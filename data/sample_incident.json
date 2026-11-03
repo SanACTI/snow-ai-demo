@@ -1,0 +1,20 @@
+{
+  "number": "INC0012345",
+  "type": "incident",
+  "short_description": "Production database connection pool exhausted",
+  "description": "Users are unable to log into the application. Database connection pool has reached maximum limit. Application logs show repeated timeout errors.",
+  "symptoms": "Login failures, slow response times, timeout errors in app logs",
+  "impacted_services": ["user-auth-service", "order-management-service"],
+  "priority": "P1",
+  "opened_at": "2026-05-14T08:30:00Z",
+  "resolved_at": "2026-05-14T11:45:00Z",
+  "assignment_group": "Database Operations",
+  "ci_name": "prod-db-cluster-01",
+  "root_cause_notes": "Connection pool size was not increased after recent traffic spike. Max connections set to 100, actual demand reached 340.",
+  "resolution_notes": "Increased connection pool size to 500. Restarted application servers to clear stale connections.",
+  "work_notes": "Checked DB metrics at 08:45. Confirmed pool exhaustion. Escalated to DBA team at 09:00. Temporary fix applied at 10:30.",
+  "close_notes": "Permanent fix scheduled - connection pool auto-scaling to be implemented in next sprint.",
+  "related_incidents": ["INC0012100", "INC0011987"],
+  "problem_id": "PRB0001234",
+  "change_id": "CHG0009876"
+}

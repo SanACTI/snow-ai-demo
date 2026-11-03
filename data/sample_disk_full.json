@@ -1,0 +1,20 @@
+{
+  "number": "INC0012349",
+  "type": "incident",
+  "short_description": "Production server disk full causing application crash",
+  "description": "Application server prod-app-02 ran out of disk space. Application logs stopped being written and the application crashed due to inability to write temp files.",
+  "symptoms": "disk full, application crash, log write failures",
+  "impacted_services": ["inventory-service", "product-catalog-service"],
+  "priority": "P2",
+  "opened_at": "2026-05-15T03:00:00Z",
+  "resolved_at": "2026-05-15T04:30:00Z",
+  "assignment_group": "Infrastructure",
+  "ci_name": "prod-app-02",
+  "root_cause_notes": "Log rotation was disabled after a configuration change 2 weeks ago. Logs accumulated and filled the disk.",
+  "resolution_notes": "Cleared old logs manually. Re-enabled log rotation. Added disk space monitoring alert.",
+  "work_notes": "SSH'd into server at 03:15. Confirmed disk at 100%. Found log rotation disabled in config. Cleared 45GB of old logs.",
+  "close_notes": "Log rotation re-enabled. Disk monitoring alert set at 80% threshold.",
+  "related_incidents": [],
+  "problem_id": null,
+  "change_id": "CHG0009820"
+}

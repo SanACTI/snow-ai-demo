@@ -1,0 +1,20 @@
+{
+  "number": "INC0012347",
+  "type": "incident",
+  "short_description": "Payment service down after deployment",
+  "description": "Payment service became unavailable 10 minutes after deployment CHG0009900. Customers unable to complete purchases. Error logs show null pointer exception in payment processor.",
+  "symptoms": "null pointer exception, service unavailable, payment failures",
+  "impacted_services": ["payment-service", "checkout-service", "order-management-service"],
+  "priority": "P1",
+  "opened_at": "2026-05-12T09:00:00Z",
+  "resolved_at": "2026-05-12T10:30:00Z",
+  "assignment_group": "Payments Team",
+  "ci_name": "payment-service-prod",
+  "root_cause_notes": "New deployment introduced a breaking change in payment processor library version.",
+  "resolution_notes": "Rolled back deployment CHG0009900 to previous stable version.",
+  "work_notes": "Checked deployment logs at 09:15. Confirmed null pointer in new library version. Rollback initiated at 10:00.",
+  "close_notes": "Deployment process to include integration tests for payment processor going forward.",
+  "related_incidents": ["INC0012300"],
+  "problem_id": "PRB0001235",
+  "change_id": "CHG0009900"
+}

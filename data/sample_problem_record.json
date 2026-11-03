@@ -1,0 +1,20 @@
+{
+  "number": "PRB0001236",
+  "type": "problem",
+  "short_description": "Recurring memory leaks in authentication service",
+  "description": "Authentication service has experienced 5 memory-related outages in the past 30 days. Each time the service is restarted as a workaround but root cause has not been permanently fixed.",
+  "symptoms": "out of memory errors, service crashes every 5-7 days, gradual memory growth",
+  "impacted_services": ["user-auth-service", "session-management-service"],
+  "priority": "P2",
+  "opened_at": "2026-04-15T08:00:00Z",
+  "resolved_at": null,
+  "assignment_group": "Backend Engineering",
+  "ci_name": "auth-service-prod",
+  "root_cause_notes": "Suspected memory leak in session token cache. Investigation ongoing.",
+  "resolution_notes": null,
+  "work_notes": "Heap dumps collected on 3 occasions. Analysis points to unbounded session cache growth. Ticket raised with vendor.",
+  "close_notes": null,
+  "related_incidents": ["INC0012100", "INC0011987", "INC0011500", "INC0011200", "INC0010900"],
+  "problem_id": "PRB0001236",
+  "change_id": null
+}

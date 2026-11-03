@@ -1,0 +1,20 @@
+{
+  "number": "INC0012348",
+  "type": "incident",
+  "short_description": "Report generation taking longer than usual",
+  "description": "Monthly sales reports are taking 45 minutes to generate instead of the usual 10 minutes.",
+  "symptoms": "slow report generation, high CPU usage on reporting server",
+  "impacted_services": ["reporting-service"],
+  "priority": "P3",
+  "opened_at": "2026-05-13T10:00:00Z",
+  "resolved_at": "2026-05-13T12:00:00Z",
+  "assignment_group": "Data Engineering",
+  "ci_name": "reporting-server-01",
+  "root_cause_notes": "Missing database index on report query after recent schema migration.",
+  "resolution_notes": "Added missing index. Report generation time back to normal.",
+  "work_notes": "Checked query execution plan. Found full table scan due to missing index.",
+  "close_notes": "Schema migration checklist to include index verification step.",
+  "related_incidents": [],
+  "problem_id": null,
+  "change_id": "CHG0009850"
+}
