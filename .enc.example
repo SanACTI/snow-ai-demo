@@ -1,0 +1,4 @@
+MODEL_NAME=mistral
+CHEAP_MODEL_NAME=mistral
+BASE_URL=http://localhost:11434
+# have to change data here depending on the llm installed.
